@@ -73,10 +73,6 @@ class SimpleBoxEnv(gym.Env):
         # it's just for compatibility.
         # x, vx, y, vy, phi, omega
         self.goal_state = self.system.create_xy_goal(np.array([4.5,4.5]))
-        self.goal_w = 0.
-        self.goal_vx = 0.
-        self.goal_vy = 0.
-        self.goal_phi = 0.
 
         self.xg_lower = 4.
         self.yg_lower = 4.
@@ -93,7 +89,7 @@ class SimpleBoxEnv(gym.Env):
 
         self.dt = 0.1
 
-        self.start_state = self.system.create_start_state_xxdyyd(np.array([4.0,0,0.75,0]))
+        self.start_state = self.system.create_start_state_xxdyyd(np.array([4.4,0,4.55,0]))
 
         self.min_cost = self.collision_cost - 2*200*self.control_cost*self.Tmax**2 
 
@@ -110,11 +106,6 @@ class SimpleBoxEnv(gym.Env):
 
         self.seed(2015)
         self.viewer = None
-    
-
-    def set_hovering_goal(self, hover_at_end):
-        print('Set hover_end to', hover_at_end, flush=True)
-        self.hover_end = hover_at_end
 
 
     def map_action(self, action):
@@ -146,83 +137,12 @@ class SimpleBoxEnv(gym.Env):
             return True
         else:
             return False
-    
-    # input: list of obstacle x,y,r
-    #        state space bounds (walls) xlow, xhigh, ylow, yhigh  
-    #        ray x,y origin, angle th w.r.t global frame x axis
-    # output: distance to nearest obstacle
-#    def ray_dist(self,x,y,th):
-#        # first compute distances to all obstacles (vectorized)
-#        th_obs = np.arctan2( self.obst_Y - y, self.obst_X - x) 
-#        dth = np.mod(th - th_obs + np.pi, 2*np.pi) - np.pi
 
-#        R = np.sqrt( (self.obst_X - x)**2 + (self.obst_Y - y)**2 )
-
-#        sinalpha = R*np.sin(dth)/self.obst_R
-#        sinalpha[abs(sinalpha)>1] = np.nan
-#        alpha = np.pi - np.arcsin(sinalpha)
-#        beta = np.pi - dth - alpha
-
-#        d = np.sqrt(R**2 + self.obst_R**2 - 2*R*self.obst_R*np.cos(beta))
-#        d[dth>np.pi/2] = np.inf
-
-#        beta[np.isnan(beta)] = np.inf
-#        d[beta>np.pi/2] = np.inf
-
- #       # append distances to all walls
- #       d_xhigh = np.inf
- #       d_xlow = np.inf
- #       d_yhigh = np.inf
- #       d_ylow = np.inf
-
-#        if abs(np.cos(th)) > 1e-5:
-#            delx_high = self.x_upper - x
-#            d_xhigh = delx_high/np.cos(th)
-
-#            delx_low = self.x_lower - x
-#            d_xlow = delx_low/np.cos(th)
-
-#        if np.abs(np.sin(th)) > 1e-5:
-#            dely_high = self.y_upper - y
-#            d_yhigh = dely_high/np.sin(th)
-
-#            dely_low = self.y_lower - y
-#            d_ylow = dely_low/np.sin(th)
-
-#        d = np.concatenate([d, [d_xhigh, d_xlow, d_yhigh, d_ylow]])
-#        d[d<0] = np.inf
-
-#        return np.min(d)
-
-#    def get_ray_angles(self):
-#        th = self.state[4]
-#        del_th = 2*np.pi/self.num_sensors
-#        # Must force it to the first self.num_sensors because of numerical
-#        # issues (it happens!)
-#        return np.arange(th, th+2*np.pi, del_th)[:self.num_sensors]
-
-#    def sensor_measurements(self):
-#        x = self.state[0]
-#        y = self.state[2]
-#        ray_angles = self.get_ray_angles()
-#        ray_measurements = [self.ray_dist(x,y,th_r) for th_r in ray_angles]
-#        return np.array(ray_measurements)
 
     def plot_quad_in_map(self):
         x = self.state[0]
         y = self.state[2]
-        #th = self.state[4]
-        r_quad = self.quad_rad
-        
-        #ray_angles = self.get_ray_angles()
-        #ray_measurements = [self.ray_dist(x,y,th_r) for th_r in ray_angles]
 
-        #x_points = x + ray_measurements*np.cos(ray_angles)
-        #y_points = y + ray_measurements*np.sin(ray_angles)
-
-        #for xi, yi in zip(x_points, y_points):
-        #    plt.plot([x,xi], [y, yi], color='r', linestyle=':', alpha=0.5)
-        #plt.plot(x_points, y_points, marker='+', color='r', linestyle='none')
         ax = plt.gca()
         for xo,yo,ro in zip(self.obst_X, self.obst_Y, self.obst_R):
             c = plt.Circle((xo,yo),ro, color='black', alpha=1.0)
@@ -252,14 +172,11 @@ class SimpleBoxEnv(gym.Env):
         return False
 
     def _get_obs(self, state):
-        #measurements = self.sensor_measurements()
-        #x,vx,y,vy,phi,omega = state
-        #return np.concatenate([np.array([x, vx, y, vy, np.cos(phi), np.sin(phi), omega]), measurements])
         return self.system.get_observation(state)
 
     def step(self, action):
-        #map action
-        action = self.map_action(action)
+        #map action is only needed in the quadrotor case since the zero thrust makes everything crash.
+        #action = self.map_action(action)
 
         if sum(np.isnan(action)) > 0:
             raise ValueError("Passed in nan to step! Action: " + str(action));

@@ -24,7 +24,7 @@ class SimpleMIMO(System):
         self.C = C
 
     def x_dot(self,x,u):
-        return self.A*x + self.B*u
+        return np.dot(self.A,x) + np.dot(self.B,u)
 
     def simulate_step(self,xi,u,delta_T=0.01):
         # Uses Euler's method to step forwards in time and simulate the system
@@ -68,7 +68,7 @@ class Double_Integrator(SimpleMIMO):
 
     def create_xy_goal(self,goal):
         #The goal is set at goal=[x,y], we choose to set the velocity at exactly 1 to avoid issues.
-        return np.array([goal[0],1.,goal[1],1.])
+        return np.array([goal[0],1e-4,goal[1],1e-4])
 
     def create_start_state_xxdyyd(self,start):
         #No modifications to make here, start is already in the right form.

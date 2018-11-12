@@ -19,5 +19,4 @@ print('This works!')
 quad = SimpleBox.SimpleBoxEnv(my_system)
 quad.state = quad.start_state
 quad.plot_quad_in_map()
-plt.plot(range(5),range(5))
 plt.savefig('figure_DoubleIntegrator')
