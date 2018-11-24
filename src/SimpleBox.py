@@ -14,6 +14,7 @@ import numpy as np
 import scipy
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
+#from IPython import embed
 
 from SystemModels import Double_Integrator
 
@@ -64,7 +65,7 @@ class SimpleBoxEnv(gym.Env):
         self.y_lower = 0.
 
         #other state bounds
-        self.v_limit = 2.5
+        self.v_limit = 2.
         self.phi_limit = 5.
         self.omega_limit = np.pi/6.
 
@@ -72,7 +73,7 @@ class SimpleBoxEnv(gym.Env):
         # Have no fear, goal_state isn't used anywhere, 
         # it's just for compatibility.
         # x, vx, y, vy, phi, omega
-        self.goal_state = self.system.create_xy_goal(np.array([4.5,4.5]))
+        self.goal_state = self.system.create_xy_goal(np.array([4.,4.]))
 
         self.xg_lower = 4.
         self.yg_lower = 4.
@@ -89,7 +90,7 @@ class SimpleBoxEnv(gym.Env):
 
         self.dt = 0.1
 
-        self.start_state = self.system.create_start_state_xxdyyd(np.array([4.4,0,4.55,0]))
+        self.start_state = self.system.create_start_state_xxdyyd(np.array([3.,0.,3.,0.]))
 
         self.min_cost = self.collision_cost - 2*200*self.control_cost*self.Tmax**2 
 
@@ -103,6 +104,7 @@ class SimpleBoxEnv(gym.Env):
         self.action_space = spaces.Box(low=low_actions,high=high_actions)
         self.state_space = spaces.Box(low=low_state, high=high_state)
         self.observation_space = spaces.Box(low=low_obsv, high=high_obsv)
+        self.state_space_limits_np = np.array([low_state,high_state]).T
 
         self.seed(2015)
         self.viewer = None

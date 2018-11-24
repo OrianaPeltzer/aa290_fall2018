@@ -10,7 +10,11 @@ class Problem(gym.Env):
 
     def __init__(self, env_name, zero_goal_v=False, disturbance=None):
         self.env_name = env_name
-        self.env = TimeLimit(SimpleBox.SimpleBoxEnv(Double_Integrator()), max_episode_steps=200)
+
+        # new
+        self.environment = SimpleBox.SimpleBoxEnv(Double_Integrator())
+
+        self.env = TimeLimit(self.environment, max_episode_steps=200)
         self.env.unwrapped.set_disturbance(disturbance)
 
         if zero_goal_v:

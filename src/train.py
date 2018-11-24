@@ -2,6 +2,7 @@ import numpy as np
 
 from utils import *
 from curriculum import random, update_backward_reachable_set, sample_from_backward_reachable_set, backward_reachable, graph
+from Graph import Graph
 from problem import Problem
 from rl import ppo
 from collections import defaultdict
@@ -34,6 +35,8 @@ parser.add_argument("--hover_at_end", help="whether to null velocity and rates a
                     action="store_true")
 parser.add_argument("--variation", help="what variation to use",
                     type=int, default=None)
+parser.add_argument("--density_vector", help="How densely to fill the state space using the graph?",
+                    type=list, default=[.2,.5,.2,.5])
 
 args = parser.parse_args()
 
@@ -90,7 +93,8 @@ def train(problem,              # Problem object, describing the task.
           curriculum_strategy=random, 
           train_algo=ppo, 
           start_distribution=uniform,
-          debug=False):
+          debug=False,
+          density_vector=(0.2,0.1,0.2,0.1)):
 
     data_logger = DataLogger(col_names=['overall_iter', 'ppo_iter', 
                                         'overall_perf', 'overall_area', 
@@ -188,6 +192,25 @@ def train_graph(**kwargs):
     start_distribution = kwargs["start_distribution"];
     debug = kwargs["debug"];
     data_logger = kwargs["data_logger"];
+    density_vector = kwargs["density_vector"]
+
+    # ---------------------------- GRAPH CREATION --------------------------- #
+    print("Greating Graph")
+
+    environment = problem.environment
+    graph_dimension = environment.system.state_dimensions
+    start_state = environment.start_state
+
+    my_graph = Graph(graph_dimension)
+    limits = environment.state_space_limits_np
+    my_graph.fill_graph_gridwise(limits, density_vector, environment)
+    print("Graph created. Now finding shortest path:")
+    print(start_state)
+    print(goal_state)
+    first_path = my_graph.get_shortest_path(tuple(start_state),tuple(goal_state))
+    first_state_to_train = first_path[1]
+    my_graph.delete_edge(first_state_to_train,goal_state) #Once you consider an edge for training, delete it
+    # ----------------------------------------------------------------------- #
 
     # Keyword arguments for the curriculum strategy.
     curric_kwargs = defaultdict(lambda: None)
@@ -195,8 +218,8 @@ def train_graph(**kwargs):
     # Not used in algorithm, only for visualization.
     all_starts = [goal_state]
 
-    old_starts = [goal_state]
-    starts = [goal_state]
+    old_starts = [first_state_to_train]
+    starts = [first_state_to_train]
     pi_i = initial_policy
     overall_perf, overall_area = list(), list()
     ppo_perf, ppo_lens, ppo_rews = list(), list(), list()
@@ -204,15 +227,17 @@ def train_graph(**kwargs):
     i = 0
     ppo_iter_count = 0;
     pi_i.save_model(MODEL_DIR, iteration=i);
+
+    new_starts = starts #to avoid confusion since we update the curriculum strategy at the end of the loop
+
+
     while i < num_iters:
         # while perf_metric < args.finish_threshold and i < num_iters:
         print('Training Iteration %d' % i, flush=True)
         data_logger.update_indices({"overall_iter": i, "ppo_iter": ppo_iter_count})
 
-        new_starts = curriculum_strategy(starts, N_new, problem)
 
-        from_replay = sample(old_starts, size=N_old)
-        starts = new_starts + from_replay
+        starts = sample(new_starts, size=N_new)
 
         rho_i = list(zip(starts, start_distribution(starts)))
         pi_i, rewards_map, ep_mean_lens, ep_mean_rews = train_step(rho_i, pi_i, train_algo, problem,
@@ -262,6 +287,9 @@ def train_graph(**kwargs):
 
         print(
             '[Overall Iter %d]: perf_metric = %.2f | Area Coverage = %.2f%%' % (i, perf_metric, area_coverage * 100.));
+
+        state_that_has_just_been_trained_on = new_starts
+        new_starts, my_graph = curriculum_strategy(state_that_has_just_been_trained_on, start_state, goal_state, my_graph, pct_successful,ep_mean_rews)
 
         # Incrementing our algorithm's loop counter.
         i += 1;
@@ -558,6 +586,8 @@ if __name__ == '__main__':
             curr_strategy = backward_reachable
         elif args.type == 'ppo_only':
             curr_strategy = None
+        elif args.type == 'graph':
+            curr_strategy = graph
         else:
             raise ValueError("%s is an unknown curriculum strategy!" % args.type);
 
@@ -568,7 +598,8 @@ if __name__ == '__main__':
                                goal_state=problem.goal_state,
                                full_start_dist=full_start_dist,
                                curriculum_strategy=curr_strategy,
-                               debug=args.debug)
+                               debug=args.debug,
+                               density_vector=args.density_vector)
 
         trained_policy.save_model(MODEL_DIR);
         print('Done training!');

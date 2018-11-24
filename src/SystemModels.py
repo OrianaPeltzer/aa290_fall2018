@@ -1,11 +1,14 @@
 import numpy as np
 
+
 class System():
 #General system from which we can create many sub_systems inherited from this class. Here are the necessary functions and attributes
 # that are likely to be called upon when using any object of the System class
     def __init__(self,state_dimensions,control_input_dimensions, state_bounds = None, control_bounds = None):
         self.state = np.zeros(state_dimensions)
+        self.state_dimensions = state_dimensions
         self.control_input = np.zeros(control_input_dimensions)
+        self.control_input_dimensions = control_input_dimensions
 
     def x_dot(self,x,u):
         return
@@ -54,16 +57,32 @@ class Double_Integrator(SimpleMIMO):
         SimpleMIMO.__init__(self,A,B,C)
 
         #Velocity limits
-        self.xd_upper_lim = 300.
-        self.yd_upper_lim = 300.
-        self.xd_lower_lim = -300.
-        self.yd_lower_lim = -300.
+        self.xd_upper_lim = 2.
+        self.yd_upper_lim = 2.
+        self.xd_lower_lim = -2.
+        self.yd_lower_lim = -2.
 
         #Control input limits
-        self.ux_upper_lim = 500.
-        self.uy_upper_lim = 500.
-        self.ux_lower_lim = -500.
-        self.uy_lower_lim = -500.
+        self.ux_upper_lim = 5.
+        self.uy_upper_lim = 5.
+        self.ux_lower_lim = -5.
+        self.uy_lower_lim = -5.
+
+        #Q and R for solving optimal control problem
+        self.Q = np.eye(self.state_dimensions)
+        self.R = np.eye(self.control_input_dimensions)
+        self.H = np.eye(self.state_dimensions)
+
+        #Less computations in the solve optimal control function
+        self.Rm1 = np.linalg.inv(self.R)
+        self.M = np.dot(self.B, self.Rm1).dot(self.B.T)
+
+        #Initialize these (only useful to avoid bugs)
+        self.K =False
+        self.K_j = False
+        #Creates self.K the controller
+        self.solve_LQR_K()
+
 
 
     def create_xy_goal(self,goal):
@@ -87,4 +106,31 @@ class Double_Integrator(SimpleMIMO):
     def create_action_limits(self):
         #Returns high_action, low_action
         return np.array([self.ux_upper_lim,self.uy_upper_lim]), np.array([self.ux_lower_lim,self.uy_lower_lim])
+
+    def solve_LQR_K(self,time_horizon = 0.5):
+        K = self.H
+        delta_T = 0.001
+        for i in np.mgrid[delta_T:time_horizon:delta_T]:
+            K_dot = -self.Q + K.dot(self.M).dot(K.T) - np.dot(K,self.A) - self.A.T.dot(K)
+            K = K - delta_T*K_dot
+
+            if np.linalg.norm(K_dot) < 0.05:
+                break
+        self.K_j = K
+        self.K = -self.Rm1.dot(self.B.T).dot(K)
+        return
+
+    def solve_optimal_control_cost(self, node_start, node_end):
+        return 0.5*(node_start-node_end).T.dot(self.K_j).dot(node_start-node_end)
+
+    def is_feasible_LQR_path(self,node_start,node_end,environment,time_horizon = 0.5):
+        delta_T = 0.001
+        x = node_start
+        for i in np.mgrid[delta_T:time_horizon:delta_T]:
+            x_dot = self.x_dot(x, self.K.dot(x-node_end))
+            x += delta_T*x_dot
+            if (i/delta_T)%10 == 0: #We won't always to the test, only sometimes
+                if environment._in_obst(x):
+                    return False, np.inf #If the path is infeasible then it has an infinite expected cost
+        return True, np.linalg.norm(x-node_end)
 

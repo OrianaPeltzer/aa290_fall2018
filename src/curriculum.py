@@ -1,4 +1,5 @@
 from utils import uniform, sample
+from Graph import Graph
 from numpy.random import uniform
 import numpy as np
 
@@ -65,5 +66,27 @@ def backward_reachable(starts, N_new, problem, **kwargs):
     return sample_from_backward_reachable_set(N_new, **locals());
 
 
-def graph(starts,N_new,problem,**kwargs):
-    return
+def graph(state_that_has_just_been_trained_on, start_state, goal_state, my_graph, pct_successful,ep_mean_rews,**kwargs):
+
+    real_cost = ((1.0-pct_successful)**2)*ep_mean_rews #Cost once ppo has trained on this node
+
+    # Add edge to graph linking goal state and trained node
+    my_graph.g[state_that_has_just_been_trained_on][goal_state] = real_cost
+
+    #Tell the graph that this node is explored
+    my_graph.explored_nodes += state_that_has_just_been_trained_on
+
+    next_path = my_graph.get_shortest_path(start_state,goal_state)
+
+    if len(next_path) <= 2:
+        return True
+
+    if next_path[1] in my_graph.explored_nodes:
+        my_graph.delete_edge(next_path[2],next_path[1])
+        next_point_to_train_on = next_path[2]
+    else:
+        my_graph.delete_edge(next_path[1], goal_state)
+        next_point_to_train_on = next_path[1]
+
+    # return a list of starts
+    return next_point_to_train_on, my_graph
