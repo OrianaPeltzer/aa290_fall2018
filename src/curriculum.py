@@ -74,19 +74,21 @@ def graph(state_that_has_just_been_trained_on, start_state, goal_state, my_graph
     my_graph.assign_to_graph(state_that_has_just_been_trained_on,goal_state,real_cost)
     #my_graph.g[state_that_has_just_been_trained_on][goal_state] = real_cost
 
+
     #Tell the graph that this node is explored
     my_graph.explored_nodes += [my_graph.transform_to_grid(state_that_has_just_been_trained_on)]
 
     next_path = my_graph.get_shortest_path(start_state,goal_state) #This outputs a list of tuples
 
     if len(next_path) <= 2:
-        return True
-
+        return True, my_graph
 
     np2 = my_graph.transform_to_grid(next_path[-2])
     explored_nodes = my_graph.explored_nodes
-    embed()
-    if np.isin(explored_nodes,np2).all():
+
+    #embed()
+
+    if np.isin(explored_nodes,np2).all(axis=1).any():
         print("I have already explored node ", np2, "so I will delete edge linking it to ",next_path[-3])
         my_graph.delete_edge(next_path[-3],next_path[-2])
         next_point_to_train_on = list(next_path[-3]) #Need to convert tuples to lists
@@ -97,6 +99,11 @@ def graph(state_that_has_just_been_trained_on, start_state, goal_state, my_graph
 
     print("Next path found. It is length ", len(next_path), ":")
     print(next_path)
+
+    #Let's save the new graoh as we intend to train it
+    my_graph.path_history += [next_path]
+    my_graph.explored_nodes_history += [explored_nodes]
+    my_graph.points_chosen_for_training_history += [next_point_to_train_on]
 
     # return a new starting point in real coordinates
     return next_point_to_train_on, my_graph

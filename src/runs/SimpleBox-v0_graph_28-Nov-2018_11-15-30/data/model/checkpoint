@@ -1,0 +1,2 @@
+model_checkpoint_path: "/mnt/c/Users/orian/Desktop/AA290_GraphSearch/aa290_fall2018/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/model/iter_1"
+all_model_checkpoint_paths: "/mnt/c/Users/orian/Desktop/AA290_GraphSearch/aa290_fall2018/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/model/iter_1"

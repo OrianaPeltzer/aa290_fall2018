@@ -1,5 +1,6 @@
 import numpy as np
 from dijkstra.dijkstra import dijkstra, shortest_path
+import matplotlib.pyplot as plt
 from IPython import embed
 
 class Graph():
@@ -16,6 +17,11 @@ class Graph():
 
         #Explored means that ppo has successfully trained with this node
         self.explored_nodes = []
+
+        #History used for plotting
+        self.path_history = []
+        self.explored_nodes_history = []
+        self.points_chosen_for_training_history = []
 
     def fill_graph_gridwise(self,limits,density_vector,environment):
         """In this function the graph is meshed with a grid, and each neighbor of a node
@@ -142,6 +148,60 @@ class Graph():
         node_state = self.transform_to_grid(node_state)
         next_state = self.transform_to_grid(next_state)
         self.g[tuple(node_state)][tuple(next_state)] = cost
+        return
+
+    def plot_graph_history(self,environment):
+        """Creating as much plots as iterations numbered accordingly"""
+        for i in range(len(self.explored_nodes_history)):
+
+            # Retrieving data
+            path_history = self.path_history[i]
+            explored_nodes_history = self.explored_nodes_history[i]
+            point_chosen_for_training = self.points_chosen_for_training_history[i]
+
+
+            # ---------------------- PLOTTING MAP --------------------------------------- #
+            ax = plt.gca()
+            for xo, yo, ro in zip(environment.obst_X, environment.obst_Y, environment.obst_R):
+                c = plt.Circle((xo, yo), ro, color='black', alpha=1.0)
+                ax.add_artist(c)
+
+            r = plt.Rectangle((environment.xg_lower, environment.yg_lower), environment.xg_upper - environment.xg_lower, environment.yg_upper - environment.yg_lower,
+                              color='g', alpha=0.3, hatch='/')
+            ax.add_artist(r)
+            # --------------------------------------------------------------------------- #
+
+            # ------------------ PLOTTING PATH HISTORY ---------------------------------- #
+            list_of_xs = [state[0] for state in path_history]
+            list_of_ys = [state[2] for state in path_history]
+
+            plt.plot(list_of_xs,list_of_ys,color="green")
+            # --------------------------------------------------------------------------- #
+
+
+            # ----------------- PLOTTING EXPLORED NODES IN RED -------------------------- #
+            for explored_node in explored_nodes_history:
+                explored_x = explored_node[0]
+                explored_y = explored_node[2]
+                plt.plot([explored_x], [explored_y], marker='o', linewidth=2, color='r', markersize=5)
+            # --------------------------------------------------------------------------- #
+
+            # ------------ PLOTTING NEXT POINT TO TRAIN ON IN BLUE ---------------------- #
+            pcft_x = point_chosen_for_training[0]
+            pcft_y = point_chosen_for_training[2]
+            plt.plot([pcft_x], [pcft_y], marker='o', linewidth=2, color='blue', markersize=8)
+            # --------------------------------------------------------------------------- #
+
+
+            plt.xlim([environment.x_lower, environment.x_upper])
+            plt.ylim([environment.y_lower, environment.y_upper])
+
+            #Saves the figure
+            plt.savefig("plots/"+str(i)+".png")
+
+            #Clears the figure to create another one
+            plt.clf()
+
         return
 
 

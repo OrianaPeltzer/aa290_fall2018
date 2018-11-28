@@ -207,11 +207,14 @@ def train_graph(**kwargs):
     #Here is where we create the graph
 
     #my_graph = Graph(graph_dimension)
-    #limits = environment.state_space_limits_np
+    limits = environment.state_space_limits_np
     #my_graph.fill_graph_gridwise(limits, density_vector, environment)
+    #with open('my_graph_2.pk1','wb') as output:
+    #    pickle.dump(my_graph, output, pickle.HIGHEST_PROTOCOL)
+    #print("Saved new graph.")
 
     #Here is where we load the graph
-    with open('mygraph.pk1','rb') as input:
+    with open('my_graph_2.pk1','rb') as input:
         my_graph = pickle.load(input)
 
     print("Graph created. Now finding shortest path:")
@@ -246,6 +249,8 @@ def train_graph(**kwargs):
 
     print("\n Starting to train \n")
     #embed()
+
+    finished = False
 
     while i < num_iters:
         # while perf_metric < args.finish_threshold and i < num_iters:
@@ -320,6 +325,12 @@ def train_graph(**kwargs):
         print("Finished training iteration ", i, ". Now finding new shortest path using updated cost.")
         new_starts, my_graph = curriculum_strategy(state_that_has_just_been_trained_on, start_state, goal_state, my_graph, pct_successful,ep_mean_rews)
 
+        if new_starts == True:
+            data_logger.save_to_file();
+            pi_i.save_model(MODEL_DIR, iteration=i+1);
+            print("The algorithm terminated since we reached the start state!")
+            break
+
         new_starts = np.array(new_starts).reshape((1,my_graph.dimension))
 
         #embed()
@@ -329,6 +340,11 @@ def train_graph(**kwargs):
 
         data_logger.save_to_file();
         pi_i.save_model(MODEL_DIR, iteration=i);
+
+    with open('trained_graph.pk1', 'wb') as output:
+        pickle.dump(my_graph,output,pickle.HIGHEST_PROTOCOL)
+
+    my_graph.plot_graph_history(environment)
 
     return pi_i
 
