@@ -65,7 +65,11 @@ class Graph():
         """We have a feasible state, and we would like to create a dictionary with all its
         feasible neighbors and the cost to go to each of them."""
         neighbors_and_costs = {}
+        node = np.rint(node)
         for d in range(self.dimension):
+
+            node = np.rint(node) #Only way I found to get rid of the float bug.
+
             #This is how much we want to increment our state to reach a neighbor state
             displacement_vector = np.zeros(self.dimension)
             displacement_vector[d] = grid_spacings[d]
@@ -88,13 +92,13 @@ class Graph():
                     neighbors_and_costs[tuple(positive_neighbor)] = environment.system.solve_optimal_control_cost(self.transform_from_grid(node),self.transform_from_grid(positive_neighbor))
 
             # We do the same for the negative neighbor
-            if environment._in_obst(negative_neighbor) == False:
+            if environment._in_obst(self.transform_from_grid(negative_neighbor)) == False:
                 try:
                     self.g[tuple(negative_neighbor)]
                 except:
                     self.g[tuple(negative_neighbor)] = {} #We don't want to erase already existing information
-                if environment.system.is_feasible_LQR_path(node,negative_neighbor,environment):
-                    neighbors_and_costs[tuple(negative_neighbor)] = environment.system.solve_optimal_control_cost(node,negative_neighbor)
+                if environment.system.is_feasible_LQR_path(node,self.transform_from_grid(negative_neighbor),environment):
+                    neighbors_and_costs[tuple(negative_neighbor)] = environment.system.solve_optimal_control_cost(node,self.transform_from_grid(negative_neighbor))
 
         return neighbors_and_costs
 
@@ -181,6 +185,7 @@ class Graph():
 
             # ----------------- PLOTTING EXPLORED NODES IN RED -------------------------- #
             for explored_node in explored_nodes_history:
+                explored_node = self.transform_from_grid(explored_node)
                 explored_x = explored_node[0]
                 explored_y = explored_node[2]
                 plt.plot([explored_x], [explored_y], marker='o', linewidth=2, color='r', markersize=5)

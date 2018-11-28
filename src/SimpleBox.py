@@ -35,7 +35,7 @@ class SimpleBoxEnv(gym.Env):
         self.Cd_phi = 0.02255
         self.Iyy = 0.03
         self.g = 9.81
-        self.l = 0.5
+        self.l = 0.2
         self.Tmax = 1.00*self.m*self.g
         self.Tmin = 0
 
@@ -90,7 +90,7 @@ class SimpleBoxEnv(gym.Env):
 
         self.dt = 0.1
 
-        self.start_state = self.system.create_start_state_xxdyyd(np.array([3.,0.,3.,0.]))
+        self.start_state = self.system.create_start_state_xxdyyd(np.array([4.,0.,1.,0.]))
 
         self.min_cost = self.collision_cost - 2*200*self.control_cost*self.Tmax**2 
 

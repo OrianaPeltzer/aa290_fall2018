@@ -206,20 +206,22 @@ def train_graph(**kwargs):
 
     #Here is where we create the graph
 
-    #my_graph = Graph(graph_dimension)
+    my_graph = Graph(graph_dimension)
     limits = environment.state_space_limits_np
-    #my_graph.fill_graph_gridwise(limits, density_vector, environment)
-    #with open('my_graph_2.pk1','wb') as output:
-    #    pickle.dump(my_graph, output, pickle.HIGHEST_PROTOCOL)
-    #print("Saved new graph.")
+    my_graph.fill_graph_gridwise(limits, density_vector, environment)
+    with open('my_graph_3.pk1','wb') as output:
+        pickle.dump(my_graph, output, pickle.HIGHEST_PROTOCOL)
+    print("Saved new graph.")
 
     #Here is where we load the graph
-    with open('my_graph_2.pk1','rb') as input:
-        my_graph = pickle.load(input)
+    #with open('my_graph_2.pk1','rb') as input:
+    #    my_graph = pickle.load(input)
 
     print("Graph created. Now finding shortest path:")
     print(start_state)
     print(goal_state)
+
+    embed()
     first_path = my_graph.get_shortest_path(tuple(start_state),tuple(goal_state))
     first_state_to_train = list(first_path[-2])
     print("")
