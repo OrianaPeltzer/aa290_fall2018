@@ -110,14 +110,23 @@ class Double_Integrator(SimpleMIMO):
     def solve_LQR_K(self,time_horizon = 0.5):
         K = self.H
         delta_T = 0.001
+        print("Finding optimal LQR controller")
         for i in np.mgrid[delta_T:time_horizon:delta_T]:
             K_dot = -self.Q + K.dot(self.M).dot(K.T) - np.dot(K,self.A) - self.A.T.dot(K)
             K = K - delta_T*K_dot
 
             if np.linalg.norm(K_dot) < 0.05:
                 break
-        self.K_j = K
+        self.K_j = K #This is P (psd), found as solution to finite horizon Riccati equation, verifying that the optimal cost is xT*P*x
+        print("Solution to Riccati equation: P=")
+        print(self.K_j)
+        if np.all(np.linalg.eigvals(self.K_j) >= 0):
+            print("P is Positive Semi Definite - OK")
+        else:
+            print("P is not positive semi definite")
         self.K = -self.Rm1.dot(self.B.T).dot(K)
+        print("Found optimal controller. K=")
+        print(self.K)
         return
 
     def solve_optimal_control_cost(self, node_start, node_end):

@@ -2,7 +2,7 @@ from utils import uniform, sample
 from Graph import Graph
 from numpy.random import uniform
 import numpy as np
-
+from IPython import embed
 
 def random(starts, N_new, problem, **kwargs):
     if len(starts) == 0:
@@ -68,25 +68,35 @@ def backward_reachable(starts, N_new, problem, **kwargs):
 
 def graph(state_that_has_just_been_trained_on, start_state, goal_state, my_graph, pct_successful,ep_mean_rews,**kwargs):
 
-    real_cost = ((1.0-pct_successful)**2)*ep_mean_rews #Cost once ppo has trained on this node
+    real_cost = ((1.0-pct_successful)**2)*np.mean(ep_mean_rews)/1000. #Cost once ppo has trained on this node
 
     # Add edge to graph linking goal state and trained node
-    my_graph.g[state_that_has_just_been_trained_on][goal_state] = real_cost
+    my_graph.assign_to_graph(state_that_has_just_been_trained_on,goal_state,real_cost)
+    #my_graph.g[state_that_has_just_been_trained_on][goal_state] = real_cost
 
     #Tell the graph that this node is explored
-    my_graph.explored_nodes += state_that_has_just_been_trained_on
+    my_graph.explored_nodes += [my_graph.transform_to_grid(state_that_has_just_been_trained_on)]
 
-    next_path = my_graph.get_shortest_path(start_state,goal_state)
+    next_path = my_graph.get_shortest_path(start_state,goal_state) #This outputs a list of tuples
 
     if len(next_path) <= 2:
         return True
 
-    if next_path[1] in my_graph.explored_nodes:
-        my_graph.delete_edge(next_path[2],next_path[1])
-        next_point_to_train_on = next_path[2]
-    else:
-        my_graph.delete_edge(next_path[1], goal_state)
-        next_point_to_train_on = next_path[1]
 
-    # return a list of starts
+    np2 = my_graph.transform_to_grid(next_path[-2])
+    explored_nodes = my_graph.explored_nodes
+    embed()
+    if np.isin(explored_nodes,np2).all():
+        print("I have already explored node ", np2, "so I will delete edge linking it to ",next_path[-3])
+        my_graph.delete_edge(next_path[-3],next_path[-2])
+        next_point_to_train_on = list(next_path[-3]) #Need to convert tuples to lists
+    else:
+        print("Node ", np2, "is new! Let's delete its link to the goal and explore it")
+        my_graph.delete_edge(next_path[-2], goal_state)
+        next_point_to_train_on = list(next_path[-2])
+
+    print("Next path found. It is length ", len(next_path), ":")
+    print(next_path)
+
+    # return a new starting point in real coordinates
     return next_point_to_train_on, my_graph

@@ -9,6 +9,9 @@ from collections import defaultdict
 from data_logger import DataLogger
 from time import strftime
 from random_utils import fixed_random_seed
+import pickle
+
+from IPython import embed
 
 import os
 import argparse
@@ -201,14 +204,25 @@ def train_graph(**kwargs):
     graph_dimension = environment.system.state_dimensions
     start_state = environment.start_state
 
-    my_graph = Graph(graph_dimension)
-    limits = environment.state_space_limits_np
-    my_graph.fill_graph_gridwise(limits, density_vector, environment)
+    #Here is where we create the graph
+
+    #my_graph = Graph(graph_dimension)
+    #limits = environment.state_space_limits_np
+    #my_graph.fill_graph_gridwise(limits, density_vector, environment)
+
+    #Here is where we load the graph
+    with open('mygraph.pk1','rb') as input:
+        my_graph = pickle.load(input)
+
     print("Graph created. Now finding shortest path:")
     print(start_state)
     print(goal_state)
     first_path = my_graph.get_shortest_path(tuple(start_state),tuple(goal_state))
-    first_state_to_train = first_path[1]
+    first_state_to_train = list(first_path[-2])
+    print("")
+    print("Found first path to train on:")
+    print(first_path)
+    print("")
     my_graph.delete_edge(first_state_to_train,goal_state) #Once you consider an edge for training, delete it
     # ----------------------------------------------------------------------- #
 
@@ -228,8 +242,10 @@ def train_graph(**kwargs):
     ppo_iter_count = 0;
     pi_i.save_model(MODEL_DIR, iteration=i);
 
-    new_starts = starts #to avoid confusion since we update the curriculum strategy at the end of the loop
+    new_starts = np.array(starts) #to avoid confusion since we update the curriculum strategy at the end of the loop
 
+    print("\n Starting to train \n")
+    #embed()
 
     while i < num_iters:
         # while perf_metric < args.finish_threshold and i < num_iters:
@@ -239,10 +255,16 @@ def train_graph(**kwargs):
 
         starts = sample(new_starts, size=N_new)
 
+        print("\n The new point to train on is:")
+        print(new_starts)
+
         rho_i = list(zip(starts, start_distribution(starts)))
+
+        #embed()
+
         pi_i, rewards_map, ep_mean_lens, ep_mean_rews = train_step(rho_i, pi_i, train_algo, problem,
                                                                    num_ppo_iters=num_ppo_iters)
-
+        starts = np.array(starts)
         data_logger.save_to_npy('curr_starts', starts);
 
         all_starts.extend(starts)
@@ -256,19 +278,24 @@ def train_graph(**kwargs):
         ppo_lens.extend(ep_mean_lens)
         ppo_rews.extend(ep_mean_rews)
 
-        data_logger.save_to_npy('all_starts', all_starts);
-        data_logger.save_to_npy('old_starts', old_starts);
+        data_logger.save_to_npy('all_starts', np.array(all_starts));
+        data_logger.save_to_npy('old_starts', np.array(old_starts));
         data_logger.save_to_npy('selected_starts', starts);
-        data_logger.save_to_npy('new_starts', new_starts);
-        data_logger.save_to_npy('from_replay', from_replay);
+        data_logger.save_to_npy('new_starts', np.array(new_starts));
+        #data_logger.save_to_npy('from_replay', from_replay);
 
         ppo_iter_count += num_ppo_iters;
+
+        #embed()
 
         perf_metric = evaluate(pi_i,
                                full_start_dist,
                                problem,
                                debug=debug,
                                figfile=os.path.join(FIGURES_DIR, 'eval_iter_%d' % i))
+
+        if type(perf_metric) != float:
+            perf_metric = 0.
 
         # Format is (min_x, max_x, min_y, max_y)
         all_starts_bbox = bounding_box(all_starts)
@@ -288,8 +315,14 @@ def train_graph(**kwargs):
         print(
             '[Overall Iter %d]: perf_metric = %.2f | Area Coverage = %.2f%%' % (i, perf_metric, area_coverage * 100.));
 
-        state_that_has_just_been_trained_on = new_starts
+        state_that_has_just_been_trained_on = new_starts[0]
+        print("")
+        print("Finished training iteration ", i, ". Now finding new shortest path using updated cost.")
         new_starts, my_graph = curriculum_strategy(state_that_has_just_been_trained_on, start_state, goal_state, my_graph, pct_successful,ep_mean_rews)
+
+        new_starts = np.array(new_starts).reshape((1,my_graph.dimension))
+
+        #embed()
 
         # Incrementing our algorithm's loop counter.
         i += 1;
