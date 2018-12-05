@@ -182,7 +182,10 @@ class SimpleBoxEnv(gym.Env):
 
         if sum(np.isnan(action)) > 0:
             raise ValueError("Passed in nan to step! Action: " + str(action));
-        
+
+        #print("I am in step. Debug me please.")
+        #embed()
+
         #clip actions
         action = np.clip(action,self.Tmin,self.Tmax)
 

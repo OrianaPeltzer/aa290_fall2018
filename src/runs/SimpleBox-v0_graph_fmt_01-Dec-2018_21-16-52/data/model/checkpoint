@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/peltzer/aa290_fall2018/src/runs/SimpleBox-v0_graph_fmt_01-Dec-2018_21-16-52/data/model/iter_1"
+all_model_checkpoint_paths: "/home/peltzer/aa290_fall2018/src/runs/SimpleBox-v0_graph_fmt_01-Dec-2018_21-16-52/data/model/iter_1"

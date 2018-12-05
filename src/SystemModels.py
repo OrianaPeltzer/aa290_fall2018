@@ -52,15 +52,17 @@ class Double_Integrator(SimpleMIMO):
         # ydd = uy
         # y = Ix
         A = np.array([[0,1,0,0],[0,0,0,0],[0,0,0,1],[0,0,0,0]])
+        #A = np.array([[0, 1, 0, 0], [0, 0, 1, 0], [-3, 1, 2, 3], [2, 1, 0, 0]])
         B = np.array([[0,0],[1,0],[0,0],[0,1]])
+        #B = np.array([[0, 0], [0, 0], [1, 2], [0, 2]])
         C = np.eye(4)
         SimpleMIMO.__init__(self,A,B,C)
 
         #Velocity limits
-        self.xd_upper_lim = 2.
-        self.yd_upper_lim = 2.
-        self.xd_lower_lim = -2.
-        self.yd_lower_lim = -2.
+        self.xd_upper_lim = 1.
+        self.yd_upper_lim = 1.
+        self.xd_lower_lim = -1.
+        self.yd_lower_lim = -1.
 
         #Control input limits
         self.ux_upper_lim = 5.

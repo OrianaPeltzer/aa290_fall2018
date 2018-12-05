@@ -2,14 +2,429 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d79a2691-26b9-4f75-a14b-07596e171ca2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plot_graph.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/my_graph_3.pk1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/my_graph_fmt_2.pk1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/12.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/13.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/14.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/15.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/17.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/18.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/19.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/20.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/21.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/22.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/23.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/24.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/25.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/26.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/27.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/28.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/29.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/30.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/31.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/33.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/34.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/35.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/36.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/37.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/38.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/39.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/41.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/42.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/43.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/44.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/45.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/46.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/47.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/48.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/49.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plots/plots/9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/12.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/13.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/14.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/15.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/17.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/18.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/19.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/20.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/21.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/22.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/3 - Start14 - grid - failure/9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_1.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_1.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_10.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_10.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_11.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_11.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_12.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_12.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_12.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_13.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_13.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_13.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_14.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_14.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_14.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_15.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_15.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_15.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_16.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_16.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_16.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_17.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_17.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_17.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_18.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_18.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_18.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_19.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_19.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_19.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_2.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_2.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_20.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_20.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_20.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_21.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_21.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_21.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_22.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_22.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_22.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_23.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_23.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_23.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_24.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_24.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_24.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_3.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_3.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_4.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_4.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_5.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_5.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_6.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_6.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_7.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_7.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_8.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_8.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_9.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_9.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/trained_model.data-00000-of-00001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/trained_model.index" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/trained_model.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-0_ppo_iter-0.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-10_ppo_iter-200.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-11_ppo_iter-220.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-12_ppo_iter-240.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-13_ppo_iter-260.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-14_ppo_iter-280.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-15_ppo_iter-300.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-16_ppo_iter-320.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-17_ppo_iter-340.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-18_ppo_iter-360.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-19_ppo_iter-380.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-1_ppo_iter-20.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-20_ppo_iter-400.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-21_ppo_iter-420.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-22_ppo_iter-440.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-23_ppo_iter-460.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-2_ppo_iter-40.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-3_ppo_iter-60.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-4_ppo_iter-80.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-5_ppo_iter-100.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-6_ppo_iter-120.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-7_ppo_iter-140.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-8_ppo_iter-160.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/all_starts_overall_iter-9_ppo_iter-180.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-0_ppo_iter-0.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-10_ppo_iter-200.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-11_ppo_iter-220.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-12_ppo_iter-240.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-13_ppo_iter-260.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-14_ppo_iter-280.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-15_ppo_iter-300.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-16_ppo_iter-320.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-17_ppo_iter-340.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-18_ppo_iter-360.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-19_ppo_iter-380.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-1_ppo_iter-20.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-20_ppo_iter-400.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-21_ppo_iter-420.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-22_ppo_iter-440.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-23_ppo_iter-460.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-2_ppo_iter-40.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-3_ppo_iter-60.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-4_ppo_iter-80.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-5_ppo_iter-100.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-6_ppo_iter-120.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-7_ppo_iter-140.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-8_ppo_iter-160.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/curr_starts_overall_iter-9_ppo_iter-180.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/data_graph.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/checkpoint" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-13_ppo_iter-260.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-14_ppo_iter-280.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-15_ppo_iter-300.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-16_ppo_iter-320.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-17_ppo_iter-340.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-18_ppo_iter-360.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-19_ppo_iter-380.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-20_ppo_iter-400.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-21_ppo_iter-420.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-22_ppo_iter-440.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-23_ppo_iter-460.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-10_ppo_iter-200.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-11_ppo_iter-220.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-12_ppo_iter-240.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-13_ppo_iter-260.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-14_ppo_iter-280.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-15_ppo_iter-300.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-16_ppo_iter-320.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-17_ppo_iter-340.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-18_ppo_iter-360.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-19_ppo_iter-380.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-20_ppo_iter-400.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-21_ppo_iter-420.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-22_ppo_iter-440.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-23_ppo_iter-460.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-4_ppo_iter-80.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-5_ppo_iter-100.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-6_ppo_iter-120.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-7_ppo_iter-140.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-8_ppo_iter-160.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-9_ppo_iter-180.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-10_ppo_iter-200.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-11_ppo_iter-220.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-12_ppo_iter-240.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-13_ppo_iter-260.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-14_ppo_iter-280.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-15_ppo_iter-300.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-16_ppo_iter-320.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-17_ppo_iter-340.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-18_ppo_iter-360.npy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-19_ppo_iter-380.npy" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/.train.py.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/plots/1 - Start3 - grid/0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/plots/1 - Start3 - grid/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/plots/1 - Start3 - grid/2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/plots/1 - Start3 - grid/3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/plots/1 - Start3 - grid/4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/plots/1 - Start3 - grid/5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/plots/1 - Start3 - grid/6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/plots/1 - Start3 - grid/7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/plots/1 - Start3 - grid/8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/plots/1 - Start3 - grid/9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-33-01/data/all_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-33-01/data/curr_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-33-01/data/model/checkpoint" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-33-01/data/old_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/all_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/all_starts_overall_iter-1_ppo_iter-20.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/all_starts_overall_iter-2_ppo_iter-40.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/curr_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/curr_starts_overall_iter-1_ppo_iter-20.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/curr_starts_overall_iter-2_ppo_iter-40.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/data_graph.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/checkpoint" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/iter_0.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/iter_0.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/iter_0.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/iter_1.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/iter_1.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/iter_1.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/iter_2.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/iter_2.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/iter_3.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/iter_3.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/iter_3.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/all_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/all_starts_overall_iter-1_ppo_iter-20.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/curr_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/curr_starts_overall_iter-1_ppo_iter-20.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/data_graph.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/model/checkpoint" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/model/iter_0.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/model/iter_0.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/model/iter_0.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/model/iter_1.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/model/iter_1.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/new_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/old_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/old_starts_overall_iter-1_ppo_iter-20.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/selected_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/selected_starts_overall_iter-1_ppo_iter-20.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/all_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/all_starts_overall_iter-1_ppo_iter-20.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/all_starts_overall_iter-2_ppo_iter-40.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/all_starts_overall_iter-3_ppo_iter-60.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/all_starts_overall_iter-4_ppo_iter-80.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/all_starts_overall_iter-5_ppo_iter-100.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/all_starts_overall_iter-6_ppo_iter-120.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/all_starts_overall_iter-7_ppo_iter-140.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/all_starts_overall_iter-8_ppo_iter-160.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/all_starts_overall_iter-9_ppo_iter-180.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/curr_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/curr_starts_overall_iter-1_ppo_iter-20.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/curr_starts_overall_iter-2_ppo_iter-40.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/curr_starts_overall_iter-3_ppo_iter-60.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/curr_starts_overall_iter-4_ppo_iter-80.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/curr_starts_overall_iter-5_ppo_iter-100.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/curr_starts_overall_iter-6_ppo_iter-120.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/curr_starts_overall_iter-7_ppo_iter-140.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/curr_starts_overall_iter-8_ppo_iter-160.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/curr_starts_overall_iter-9_ppo_iter-180.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/data_graph.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/checkpoint" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_0.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_0.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_0.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_1.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_1.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_1.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_10.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_10.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_2.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_2.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_2.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_3.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_3.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_4.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_4.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_5.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_5.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_6.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_6.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_7.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_7.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_8.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_8.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_9.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_9.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/trained_model.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/trained_model.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/new_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/new_starts_overall_iter-1_ppo_iter-20.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/new_starts_overall_iter-2_ppo_iter-40.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/old_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/old_starts_overall_iter-1_ppo_iter-20.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/old_starts_overall_iter-2_ppo_iter-40.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/old_starts_overall_iter-4_ppo_iter-80.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/old_starts_overall_iter-5_ppo_iter-100.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/old_starts_overall_iter-6_ppo_iter-120.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/old_starts_overall_iter-7_ppo_iter-140.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/old_starts_overall_iter-8_ppo_iter-160.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/old_starts_overall_iter-9_ppo_iter-180.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/selected_starts_overall_iter-0_ppo_iter-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/selected_starts_overall_iter-2_ppo_iter-40.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/selected_starts_overall_iter-3_ppo_iter-60.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_16-23-38/data/model/checkpoint" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_16-23-38/data/model/iter_0.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_16-23-38/data/model/iter_0.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_16-23-38/data/model/iter_0.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_16-34-34/data/model/checkpoint" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_16-34-34/data/model/iter_0.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_16-34-34/data/model/iter_0.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_16-34-34/data/model/iter_0.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_16-55-33/data/model/checkpoint" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_16-55-33/data/model/iter_0.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_16-55-33/data/model/iter_0.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_16-55-33/data/model/iter_0.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_17-03-41/data/model/checkpoint" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_17-03-41/data/model/iter_0.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_17-03-41/data/model/iter_0.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_08-Nov-2018_17-03-41/data/model/iter_0.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_12-Nov-2018_10-43-39/data/model/checkpoint" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_12-Nov-2018_10-43-39/data/model/iter_0.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_12-Nov-2018_10-43-39/data/model/iter_0.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_ppo_only_12-Nov-2018_10-43-39/data/model/iter_0.meta" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-33-01/data/model/iter_0.data-00000-of-00001" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_0.data-00000-of-00001" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-33-01/data/model/iter_0.index" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_0.index" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-33-01/data/model/iter_0.meta" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_0.meta" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-33-01/data/new_starts_overall_iter-0_ppo_iter-0.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-0_ppo_iter-0.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-33-01/data/selected_starts_overall_iter-0_ppo_iter-0.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-11_ppo_iter-220.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/model/iter_2.meta" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_2.meta" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/new_starts_overall_iter-0_ppo_iter-0.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-12_ppo_iter-240.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/new_starts_overall_iter-1_ppo_iter-20.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-10_ppo_iter-200.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/new_starts_overall_iter-2_ppo_iter-40.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-2_ppo_iter-40.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/old_starts_overall_iter-0_ppo_iter-0.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-0_ppo_iter-0.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/old_starts_overall_iter-1_ppo_iter-20.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-1_ppo_iter-20.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/old_starts_overall_iter-2_ppo_iter-40.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-2_ppo_iter-40.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/selected_starts_overall_iter-0_ppo_iter-0.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-0_ppo_iter-0.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/selected_starts_overall_iter-1_ppo_iter-20.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-1_ppo_iter-20.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_10-40-18/data/selected_starts_overall_iter-2_ppo_iter-40.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-2_ppo_iter-40.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/model/iter_1.meta" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_1.meta" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-15-30/data/new_starts_overall_iter-1_ppo_iter-20.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-1_ppo_iter-20.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_10.meta" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_10.meta" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_3.meta" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_3.meta" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_4.meta" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_4.meta" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_5.meta" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_5.meta" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_6.meta" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_6.meta" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_7.meta" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_7.meta" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_8.meta" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_8.meta" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/iter_9.meta" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_9.meta" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/trained_model.meta" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/model/iter_11.meta" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/new_starts_overall_iter-3_ppo_iter-60.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-3_ppo_iter-60.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/new_starts_overall_iter-4_ppo_iter-80.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-4_ppo_iter-80.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/new_starts_overall_iter-5_ppo_iter-100.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-5_ppo_iter-100.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/new_starts_overall_iter-6_ppo_iter-120.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-6_ppo_iter-120.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/new_starts_overall_iter-7_ppo_iter-140.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-7_ppo_iter-140.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/new_starts_overall_iter-8_ppo_iter-160.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-8_ppo_iter-160.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/new_starts_overall_iter-9_ppo_iter-180.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/new_starts_overall_iter-9_ppo_iter-180.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/old_starts_overall_iter-3_ppo_iter-60.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/old_starts_overall_iter-3_ppo_iter-60.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/selected_starts_overall_iter-4_ppo_iter-80.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-4_ppo_iter-80.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/selected_starts_overall_iter-5_ppo_iter-100.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-5_ppo_iter-100.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/selected_starts_overall_iter-6_ppo_iter-120.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-6_ppo_iter-120.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/selected_starts_overall_iter-7_ppo_iter-140.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-7_ppo_iter-140.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/selected_starts_overall_iter-8_ppo_iter-160.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-8_ppo_iter-160.npy" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/selected_starts_overall_iter-9_ppo_iter-180.npy" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_15-33-01/data/selected_starts_overall_iter-9_ppo_iter-180.npy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/baselines" afterPath="$PROJECT_DIR$/baselines" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dijkstra" afterPath="$PROJECT_DIR$/src/dijkstra" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plots/0.png" afterPath="$PROJECT_DIR$/src/plots/0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plots/1.png" afterPath="$PROJECT_DIR$/src/plots/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plots/2.png" afterPath="$PROJECT_DIR$/src/plots/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plots/3.png" afterPath="$PROJECT_DIR$/src/plots/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plots/4.png" afterPath="$PROJECT_DIR$/src/plots/4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plots/5.png" afterPath="$PROJECT_DIR$/src/plots/5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plots/6.png" afterPath="$PROJECT_DIR$/src/plots/6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plots/7.png" afterPath="$PROJECT_DIR$/src/plots/7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plots/8.png" afterPath="$PROJECT_DIR$/src/plots/8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plots/9.png" afterPath="$PROJECT_DIR$/src/plots/9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trained_graph.pk1" afterPath="$PROJECT_DIR$/src/trained_graph.pk1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graph.py" afterPath="$PROJECT_DIR$/src/Graph.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SimpleBox.py" afterPath="$PROJECT_DIR$/src/SimpleBox.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/data_graph.csv" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/data_graph.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/checkpoint" afterPath="$PROJECT_DIR$/src/runs/SimpleBox-v0_graph_28-Nov-2018_11-26-15/data/model/checkpoint" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SystemModels.py" afterPath="$PROJECT_DIR$/src/SystemModels.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/curriculum.py" afterPath="$PROJECT_DIR$/src/curriculum.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plot_graph.py" afterPath="$PROJECT_DIR$/src/plot_graph.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/train.py" afterPath="$PROJECT_DIR$/src/train.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +439,7 @@
       <file leaf-file-name="gym_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gym_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="141">
               <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -43,25 +458,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="curriculum.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/curriculum.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="99" column="64" lean-forward="false" selection-start-line="99" selection-start-column="64" selection-end-line="99" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-                <element signature="e#1106#1703#0" expanded="false" />
-                <element signature="e#2373#2489#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="problem.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/problem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+            <state relative-caret-position="226">
+              <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -72,22 +473,10 @@
       <file leaf-file-name="SimpleBox.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SimpleBox.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="56" lean-forward="false" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
+            <state relative-caret-position="187">
+              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
               <folding>
                 <element signature="e#197#211#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Graph.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Graph.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="51" column="9" lean-forward="false" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,10 +485,32 @@
       <file leaf-file-name="plot_graph.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/plot_graph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state relative-caret-position="0">
+              <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SystemModels.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SystemModels.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="57" column="21" lean-forward="false" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="curriculum.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/curriculum.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#33#0" expanded="true" />
+                <element signature="e#1118#1715#0" expanded="false" />
+                <element signature="e#2385#2501#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -108,15 +519,40 @@
       <file leaf-file-name="train.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="213" column="29" lean-forward="true" selection-start-line="213" selection-start-column="29" selection-end-line="213" selection-end-column="29" />
+            <state relative-caret-position="256">
+              <caret line="282" column="0" lean-forward="true" selection-start-line="282" selection-start-column="0" selection-end-line="282" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#3095#3616#0" expanded="false" />
-                <element signature="e#4372#5187#0" expanded="false" />
-                <element signature="e#5281#7489#0" expanded="false" />
-                <element signature="e#14236#18227#0" expanded="false" />
-                <element signature="e#18394#24347#0" expanded="false" />
+                <element signature="e#3129#3650#0" expanded="false" />
+                <element signature="e#5418#7626#0" expanded="false" />
+                <element signature="e#15370#19361#0" expanded="false" />
+                <element signature="e#19528#25481#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Graph.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Graph.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="188" column="35" lean-forward="false" selection-start-line="188" selection-start-column="35" selection-end-line="188" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#1458#3106#0" expanded="false" />
+                <element signature="e#3198#5541#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dijkstra.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dijkstra/dijkstra.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="71" lean-forward="false" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,6 +574,8 @@
       <find>start_re</find>
       <find>seg</find>
       <find>system</find>
+      <find>get_samples_near</find>
+      <find>print(</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,19 +599,19 @@
         <option value="$PROJECT_DIR$/rl/rl_utils.py" />
         <option value="$PROJECT_DIR$/src/problem.py" />
         <option value="$PROJECT_DIR$/src/dijkstra/dijkstra.py" />
-        <option value="$PROJECT_DIR$/src/SystemModels.py" />
         <option value="$PROJECT_DIR$/baselines/baselines/ppo1/pposgd_simple.py" />
-        <option value="$PROJECT_DIR$/src/curriculum.py" />
         <option value="$PROJECT_DIR$/src/plot_graph.py" />
-        <option value="$PROJECT_DIR$/src/train.py" />
+        <option value="$PROJECT_DIR$/src/SystemModels.py" />
+        <option value="$PROJECT_DIR$/src/curriculum.py" />
         <option value="$PROJECT_DIR$/src/SimpleBox.py" />
         <option value="$PROJECT_DIR$/src/Graph.py" />
+        <option value="$PROJECT_DIR$/src/train.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="660" />
+    <option name="y" value="29" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -274,16 +712,16 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27231467" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27609682" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2405892" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -320,11 +758,10 @@
           <caret line="206" column="106" lean-forward="false" selection-start-line="206" selection-start-column="106" selection-end-line="206" selection-end-column="106" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#3095#3616#0" expanded="false" />
-            <element signature="e#4372#5187#0" expanded="false" />
-            <element signature="e#5281#7489#0" expanded="false" />
-            <element signature="e#14236#18227#0" expanded="false" />
-            <element signature="e#18394#24347#0" expanded="false" />
+            <element signature="e#3129#3650#0" expanded="false" />
+            <element signature="e#5418#7626#0" expanded="false" />
+            <element signature="e#15370#19361#0" expanded="false" />
+            <element signature="e#19528#25481#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -335,8 +772,8 @@
           <caret line="60" column="50" lean-forward="false" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
-            <element signature="e#1106#1703#0" expanded="false" />
-            <element signature="e#2373#2489#0" expanded="false" />
+            <element signature="e#1118#1715#0" expanded="false" />
+            <element signature="e#2385#2501#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -382,6 +819,8 @@
           <caret line="25" column="53" lean-forward="false" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#1458#3106#0" expanded="false" />
+            <element signature="e#3198#5541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -436,11 +875,10 @@
           <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#3095#3616#0" expanded="false" />
-            <element signature="e#4372#5187#0" expanded="false" />
-            <element signature="e#5281#7489#0" expanded="false" />
-            <element signature="e#14236#18227#0" expanded="false" />
-            <element signature="e#18394#24347#0" expanded="false" />
+            <element signature="e#3129#3650#0" expanded="false" />
+            <element signature="e#5418#7626#0" expanded="false" />
+            <element signature="e#15370#19361#0" expanded="false" />
+            <element signature="e#19528#25481#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -585,29 +1023,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gym_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="141">
           <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dijkstra/dijkstra.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SystemModels.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="788">
-          <caret line="115" column="33" lean-forward="false" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -621,67 +1041,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/problem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        <state relative-caret-position="226">
+          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plot_graph.py">
+    <entry file="file://$PROJECT_DIR$/src/curriculum.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        <state relative-caret-position="204">
+          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#1118#1715#0" expanded="false" />
+            <element signature="e#2385#2501#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/curriculum.py">
+    <entry file="file://$PROJECT_DIR$/src/dijkstra/dijkstra.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="99" column="64" lean-forward="false" selection-start-line="99" selection-start-column="64" selection-end-line="99" selection-end-column="64" />
+        <state relative-caret-position="204">
+          <caret line="12" column="71" lean-forward="false" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
           <folding>
-            <element signature="e#0#33#0" expanded="true" />
-            <element signature="e#1106#1703#0" expanded="false" />
-            <element signature="e#2373#2489#0" expanded="false" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SystemModels.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="57" column="21" lean-forward="false" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SimpleBox.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="56" lean-forward="false" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
+        <state relative-caret-position="187">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding>
             <element signature="e#197#211#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/plot_graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Graph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="51" column="9" lean-forward="false" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+        <state relative-caret-position="160">
+          <caret line="188" column="35" lean-forward="false" selection-start-line="188" selection-start-column="35" selection-end-line="188" selection-end-column="35" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#1458#3106#0" expanded="false" />
+            <element signature="e#3198#5541#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="213" column="29" lean-forward="true" selection-start-line="213" selection-start-column="29" selection-end-line="213" selection-end-column="29" />
+        <state relative-caret-position="256">
+          <caret line="282" column="0" lean-forward="true" selection-start-line="282" selection-start-column="0" selection-end-line="282" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#3095#3616#0" expanded="false" />
-            <element signature="e#4372#5187#0" expanded="false" />
-            <element signature="e#5281#7489#0" expanded="false" />
-            <element signature="e#14236#18227#0" expanded="false" />
-            <element signature="e#18394#24347#0" expanded="false" />
+            <element signature="e#3129#3650#0" expanded="false" />
+            <element signature="e#5418#7626#0" expanded="false" />
+            <element signature="e#15370#19361#0" expanded="false" />
+            <element signature="e#19528#25481#0" expanded="false" />
           </folding>
         </state>
       </provider>

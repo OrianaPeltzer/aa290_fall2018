@@ -1,7 +1,7 @@
 import numpy as np
 
 from utils import *
-from curriculum import random, update_backward_reachable_set, sample_from_backward_reachable_set, backward_reachable, graph
+from curriculum import random, update_backward_reachable_set, sample_from_backward_reachable_set, backward_reachable, graph, graph_fmt
 from Graph import Graph
 from problem import Problem
 from rl import ppo
@@ -39,17 +39,17 @@ parser.add_argument("--hover_at_end", help="whether to null velocity and rates a
 parser.add_argument("--variation", help="what variation to use",
                     type=int, default=None)
 parser.add_argument("--density_vector", help="How densely to fill the state space using the graph?",
-                    type=list, default=[.2,.5,.2,.5])
+                    type=list, default=[.1,.1,.1,.1])
 
 args = parser.parse_args()
 
-if args.type in ['backreach', 'random', 'ppo_only','graph']:
+if args.type in ['backreach', 'random', 'ppo_only','graph','graph_fmt']:
     if args.run_name is not None:
         run_dir = args.run_name
     else:
         run_dir = args.type
 else:
-    parser.error('"%s" is not in ["backreach", "random", "ppo_only","graph"]!' % args.type);
+    parser.error('"%s" is not in ["backreach", "random", "ppo_only","graph","graph_fmt]!' % args.type);
 
 RUN_DIR = os.path.join(os.getcwd(), 'runs', args.gym_env + '_' + run_dir + '_' + strftime('%d-%b-%Y_%H-%M-%S'))
 FIGURES_DIR = os.path.join(RUN_DIR, 'figures')
@@ -113,7 +113,9 @@ def train(problem,              # Problem object, describing the task.
     elif curriculum_strategy is None:
         return train_ppo_only(**locals());
     elif curriculum_strategy in [graph]:
-        return train_graph(**locals())
+        return train_graph(fmt=False,**locals())
+    elif curriculum_strategy in [graph_fmt]:
+        return train_graph(fmt=True,**locals())
     else:
         raise ValueError("You passed in an unknown curriculum strategy!");
 
@@ -176,7 +178,7 @@ def train_ppo_only(**kwargs):
     return pi_i
 
 
-def train_graph(**kwargs):
+def train_graph(fmt=False,**kwargs):
     """Train a policy with the graph curriculum
         strategy,
         a specific policy training method (trpo, ppo, etc), and start state sampling
@@ -196,6 +198,7 @@ def train_graph(**kwargs):
     debug = kwargs["debug"];
     data_logger = kwargs["data_logger"];
     density_vector = kwargs["density_vector"]
+    k0 = 0 #Default value just to avoid bugs but it is automatically set to 300 in the fmt case
 
     # ---------------------------- GRAPH CREATION --------------------------- #
     print("Greating Graph")
@@ -204,31 +207,49 @@ def train_graph(**kwargs):
     graph_dimension = environment.system.state_dimensions
     start_state = environment.start_state
 
-    #Here is where we create the graph
+    #Here is where we create the graph ---------------
 
     my_graph = Graph(graph_dimension)
     limits = environment.state_space_limits_np
-    my_graph.fill_graph_gridwise(limits, density_vector, environment)
-    with open('my_graph_3.pk1','wb') as output:
-        pickle.dump(my_graph, output, pickle.HIGHEST_PROTOCOL)
-    print("Saved new graph.")
+    if not fmt:
+        print("We will generate a dumb grid.")
+        my_graph.fill_graph_gridwise(limits, density_vector, environment)
+        with open('my_graph_3.pk1','wb') as output:
+            pickle.dump(my_graph, output, pickle.HIGHEST_PROTOCOL)
+        print("Saved new graph.")
+    else:
+        print("FMT will be used to generate a graph.")
+        # FMT parameters
+        k0 = 20  # Not From paper, > 3**d * exp(1+1/d) took too much time
+        my_graph.fill_graph_fmtwise(limits, density_vector, environment,k0)
+        with open('my_graph_fmt_start14.pk1', 'wb') as output:
+            pickle.dump(my_graph, output, pickle.HIGHEST_PROTOCOL)
+        print("Saved new graph.")
 
-    #Here is where we load the graph
-    #with open('my_graph_2.pk1','rb') as input:
-    #    my_graph = pickle.load(input)
+
+    #Here is where we load the graph -----------------
+    #if not fmt:
+    #    with open('my_graph_3.pk1','rb') as input:
+    #        my_graph = pickle.load(input)
+    #else:
+    #    k0 = 20
+    #    with open('my_graph_fmt_newSSM.pk1', 'rb') as input:
+    #        my_graph = pickle.load(input)
 
     print("Graph created. Now finding shortest path:")
     print(start_state)
     print(goal_state)
 
-    embed()
-    first_path = my_graph.get_shortest_path(tuple(start_state),tuple(goal_state))
+    #embed()
+    my_graph.g[tuple(my_graph.transform_to_grid(goal_state))] = {} #Only keep this while you load, else change graph.py
+    first_path = my_graph.get_shortest_path(start_state,goal_state)
     first_state_to_train = list(first_path[-2])
     print("")
     print("Found first path to train on:")
     print(first_path)
     print("")
     my_graph.delete_edge(first_state_to_train,goal_state) #Once you consider an edge for training, delete it
+
     # ----------------------------------------------------------------------- #
 
     # Keyword arguments for the curriculum strategy.
@@ -254,7 +275,7 @@ def train_graph(**kwargs):
 
     finished = False
 
-    while i < num_iters:
+    while i < 75:
         # while perf_metric < args.finish_threshold and i < num_iters:
         print('Training Iteration %d' % i, flush=True)
         data_logger.update_indices({"overall_iter": i, "ppo_iter": ppo_iter_count})
@@ -325,7 +346,10 @@ def train_graph(**kwargs):
         state_that_has_just_been_trained_on = new_starts[0]
         print("")
         print("Finished training iteration ", i, ". Now finding new shortest path using updated cost.")
-        new_starts, my_graph = curriculum_strategy(state_that_has_just_been_trained_on, start_state, goal_state, my_graph, pct_successful,ep_mean_rews)
+        new_starts, my_graph = curriculum_strategy(state_that_has_just_been_trained_on, start_state, goal_state, my_graph, pct_successful,ep_mean_rews,environment,k0)
+
+        my_graph.plot_graph_last(environment,i)
+        print("Saved progression plot.")
 
         if new_starts == True:
             data_logger.save_to_file();
@@ -343,10 +367,10 @@ def train_graph(**kwargs):
         data_logger.save_to_file();
         pi_i.save_model(MODEL_DIR, iteration=i);
 
-    with open('trained_graph.pk1', 'wb') as output:
+    with open('trained_graph_start41.pkl', 'wb') as output:
         pickle.dump(my_graph,output,pickle.HIGHEST_PROTOCOL)
 
-    my_graph.plot_graph_history(environment)
+    #my_graph.plot_graph_history(environment)
 
     return pi_i
 
@@ -639,6 +663,8 @@ if __name__ == '__main__':
             curr_strategy = None
         elif args.type == 'graph':
             curr_strategy = graph
+        elif args.type == 'graph_fmt':
+            curr_strategy = graph_fmt
         else:
             raise ValueError("%s is an unknown curriculum strategy!" % args.type);
 
