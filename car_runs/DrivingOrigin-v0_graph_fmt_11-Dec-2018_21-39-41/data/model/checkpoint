@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/peltzer/aa290_fall2018/src/runs/DrivingOrigin-v0_graph_fmt_11-Dec-2018_21-39-41/data/model/iter_22"
+all_model_checkpoint_paths: "/home/peltzer/aa290_fall2018/src/runs/DrivingOrigin-v0_graph_fmt_11-Dec-2018_21-39-41/data/model/iter_22"

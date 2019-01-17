@@ -2,19 +2,22 @@ import gym
 import numpy as np
 from utils import weighted_sample, signed_delta_angle
 import SimpleBox
-from SystemModels import Double_Integrator
+import drivingOrigin
+from SystemModels import Double_Integrator, Double_Integrator_With_Noise
 from gym.wrappers import TimeLimit
 
 class Problem(gym.Env):
     metadata = {'render.modes': ['human']}
 
-    def __init__(self, env_name, zero_goal_v=False, disturbance=None):
+    def __init__(self, env_name, zero_goal_v=False, disturbance='nonzero_control_noise'):
         self.env_name = env_name
 
         # new
-        self.environment = SimpleBox.SimpleBoxEnv(Double_Integrator())
+        #self.environment = SimpleBox.SimpleBoxEnv(Double_Integrator_With_Noise())
+        self.environment = drivingOrigin.DrivingOriginEnv()
 
         self.env = TimeLimit(self.environment, max_episode_steps=200)
+        disturbance = 'nonzero_control_noise'
         self.env.unwrapped.set_disturbance(disturbance)
 
         if zero_goal_v:

@@ -15,6 +15,7 @@ import scipy
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 #from IPython import embed
+import time
 
 from SystemModels import Double_Integrator
 
@@ -40,7 +41,7 @@ class SimpleBoxEnv(gym.Env):
         self.Tmin = 0
 
         self.num_obst = 3
-        self.num_sensors = 8
+        self.num_sensors = 4
 
         self.control_cost = 0.01
         self.goal_bonus = 1000
@@ -90,13 +91,13 @@ class SimpleBoxEnv(gym.Env):
 
         self.dt = 0.1
 
-        self.start_state = self.system.create_start_state_xxdyyd(np.array([4.,0.,1.,0.]))
+        self.start_state = self.system.create_start_state_xxdyyd(np.array([4.5,0.,1.,0.]))
 
         self.min_cost = self.collision_cost - 2*200*self.control_cost*self.Tmax**2 
 
         high_state, low_state = self.system.create_limit_states_xylim(self.x_upper,self.x_lower,self.y_upper,self.y_lower)
 
-        high_obsv, low_obsv = self.system.create_observation_limits(self.x_upper,self.x_lower,self.y_upper,self.y_lower)
+        high_obsv, low_obsv = self.system.create_observation_limits(self.x_upper,self.x_lower,self.y_upper,self.y_lower,self.num_sensors)
 
         high_actions, low_actions = self.system.create_action_limits()
 
@@ -173,8 +174,83 @@ class SimpleBoxEnv(gym.Env):
 
         return False
 
+    def get_ray_angles(self):
+        th = 0
+        del_th = 2*np.pi/self.num_sensors
+        # Must force it to the first self.num_sensors because of numerical
+        # issues (it happens!)
+        return np.arange(th, th+2*np.pi, del_th)[:self.num_sensors]
+
+
+    # input: list of obstacle x,y,r
+    #        state space bounds (walls) xlow, xhigh, ylow, yhigh
+    #        ray x,y origin, angle th w.r.t global frame x axis
+    # output: distance to nearest obstacle
+    def ray_dist(self,x,y,th):
+        # first compute distances to all obstacles (vectorized)
+        th_obs = np.arctan2( self.obst_Y - y, self.obst_X - x)
+        dth = np.mod(th - th_obs + np.pi, 2*np.pi) - np.pi
+
+        R = np.sqrt( (self.obst_X - x)**2 + (self.obst_Y - y)**2 )
+
+        sinalpha = R*np.sin(dth)/self.obst_R
+        sinalpha[abs(sinalpha)>1] = np.nan
+        alpha = np.pi - np.arcsin(sinalpha)
+        beta = np.pi - dth - alpha
+
+        d = np.sqrt(R**2 + self.obst_R**2 - 2*R*self.obst_R*np.cos(beta))
+        d[dth>np.pi/2] = np.inf
+
+        beta[np.isnan(beta)] = np.inf
+        d[beta>np.pi/2] = np.inf
+
+        # append distances to all walls
+        d_xhigh = np.inf
+        d_xlow = np.inf
+        d_yhigh = np.inf
+        d_ylow = np.inf
+
+        if abs(np.cos(th)) > 1e-5:
+            delx_high = self.x_upper - x
+            d_xhigh = delx_high/np.cos(th)
+
+            delx_low = self.x_lower - x
+            d_xlow = delx_low/np.cos(th)
+
+        if np.abs(np.sin(th)) > 1e-5:
+            dely_high = self.y_upper - y
+            d_yhigh = dely_high/np.sin(th)
+
+            dely_low = self.y_lower - y
+            d_ylow = dely_low/np.sin(th)
+
+        d = np.concatenate([d, [d_xhigh, d_xlow, d_yhigh, d_ylow]])
+        d[d<0] = np.inf
+
+        return np.min(d)
+
+
+    def sensor_measurements(self):
+        x = self.state[0]
+        y = self.state[2]
+        ray_angles = self.get_ray_angles()
+        ray_measurements = [self.ray_dist(x,y,th_r) for th_r in ray_angles]
+        return np.array(ray_measurements)
+
     def _get_obs(self, state):
-        return self.system.get_observation(state)
+        start_t = time.time()
+        measurements = self.sensor_measurements()
+        mid = time.time()
+        current_state = self.system.get_observation(state)
+        end_t = time.time()
+        print("Mid-start_t")
+        print(mid-start_t)
+        print("end_t-mid")
+        print(end_t-mid)
+        print("Total:", end_t-start_t)
+        quit()
+        #embed()
+        return np.concatenate([current_state,measurements])
 
     def step(self, action):
         #map action is only needed in the quadrotor case since the zero thrust makes everything crash.

@@ -3,7 +3,7 @@ from dijkstra.dijkstra import dijkstra, shortest_path
 import matplotlib.pyplot as plt
 from scipy.spatial.distance import cdist
 from scipy.spatial import cKDTree
-import time
+import os
 from IPython import embed
 import copy
 from math import log
@@ -124,7 +124,7 @@ class Graph():
         # -------------------- STEP 1: CREATING THE GRID ------------------------------------------------------------
 
         # Since we can only deal with integers in this dictionary, let's multiply everything and assign scaling factor
-        scaling_factors = [int(1. / density) for density in density_vector]
+        scaling_factors = [1. / density for density in density_vector]
         self.scaling_factors = scaling_factors
         grid_ticks = []  # Contains all coordinates in each dimension
         grid_spacings = []  # Spacing along each dimension
@@ -132,21 +132,23 @@ class Graph():
             s = scaling_factors[d]
             # These are all the components of our axis
             if d == 0:
-                grid_ticks = [np.mgrid[limits[d][0] * s:(limits[d][1] + density_vector[d]) * s:density_vector[d] * s]]
+                grid_ticks = [np.mgrid[int(limits[d][0] * s): int((limits[d][1] + density_vector[d]) * s):int(density_vector[d] * s)]]
             else:
                 grid_ticks = [*grid_ticks,
-                              np.mgrid[limits[d][0] * s:(limits[d][1] + density_vector[d]) * s:density_vector[d] * s]]
+                              np.mgrid[int(limits[d][0] * s):int((limits[d][1] + density_vector[d]) * s):int(density_vector[d] * s)]]
 
             grid_spacings += [abs(grid_ticks[d][1] - grid_ticks[d][0])]
 
         # Create all the nodes of the graph by meshing according to the coordinates
         all_nodes = np.array(np.meshgrid(*grid_ticks)).T.reshape([-1, self.dimension])
+        #embed()
         # -----------------------------------------------------------------------------------------------------------
 
 
         # --------------------------- STEP 2: SAMPLE FROM GRID ------------------------------------------------------
         print("The grid contains ", len(all_nodes), "nodes. Let's randomly sample from it to create our graph")
-        num_nodes_to_sample = int(0.015*float(len(all_nodes)))
+        #num_nodes_to_sample = int(0.01*float(len(all_nodes)))
+        num_nodes_to_sample = 25000
         print("We will sample ", num_nodes_to_sample, "nodes from the grid.")
 
         data = copy.deepcopy(all_nodes).tolist()
@@ -203,7 +205,7 @@ class Graph():
         #Delete the start state from V_unvisited since we put it in V_open
         V_unvisited.remove(start)
 
-        k = 10
+        k = 35
         goal_state = goal
         z = start
 
@@ -211,7 +213,8 @@ class Graph():
         print("Entering while")
 
         iteration = 0
-        while np.linalg.norm(np.subtract(z,goal_state)) > 0.05:
+        terminated = False
+        while terminated == False:
             Nz = self.get_samples_near_FAST(z, k)
             V_open_new = []
             X_near = []
@@ -221,41 +224,38 @@ class Graph():
                 if elt in Nz:
                     X_near += [elt]
 
-            #if len(V_unvisited) <= 17886:
-            #    embed()
-
             for x in X_near:
 
                 # Here we try to avoid an order of magnitude of complexity by taking advantage of already stored values.
                 pre_computed_path = False
-                try:
-                    path_to_x = self.node_by_node_optimal_paths_to_go[x]
-                    path_forbidden = False
-                    #We must check if there is no forbidden edge in the path
-                    cost_to_x = 0
-                    for kx in range(1,len(path_to_x)):
-                        n1 = tuple(path_to_x[kx-1])
-                        n2 = tuple(path_to_x[kx])
-                        try:
-                            self.forbidden_edges[n1][n2]
-                            path_forbidden = True
-                        except:
-                            try:
-                                little_ctx = self.g[n1][n2] #This way if it has been trained on we have the good value
-                                cost_to_x += little_ctx
-                            except:
-                                cost_to_x += environment.system.solve_optimal_control_cost(self.transform_from_grid(n1),self.transform_from_grid(n2))
-                    if not path_forbidden:
-                        best_y = self.node_by_node_optimal_paths_to_go[x][-1]
-                        V_open_new += [x]
-                        V_unvisited.remove(x)
-                        pre_computed_path = True
-                        #The path being feasible we can update the optimal cost of
-                        node_by_node_costs[x] = cost_to_x
-                    else:
-                        del self.node_by_node_optimal_paths_to_go[x]
-                except:
-                    pass
+                #try:
+                #    path_to_x = self.node_by_node_optimal_paths_to_go[x]
+                #    path_forbidden = False
+                #    #We must check if there is no forbidden edge in the path
+                #    cost_to_x = 0
+                #    for kx in range(1,len(path_to_x)):
+                #        n1 = tuple(path_to_x[kx-1])
+                #        n2 = tuple(path_to_x[kx])
+                #        try:
+                #            self.forbidden_edges[n1][n2]
+                #            path_forbidden = True
+                #        except:
+                #            try:
+                #                little_ctx = self.g[n1][n2] #This way if it has been trained on we have the good value
+                #                cost_to_x += little_ctx
+                #            except:
+                #                cost_to_x += environment.system.solve_optimal_control_cost(self.transform_from_grid(n1),self.transform_from_grid(n2))
+                #    if not path_forbidden:
+                #        best_y = self.node_by_node_optimal_paths_to_go[x][-1]
+                #       V_open_new += [x]
+                #        V_unvisited.remove(x)
+                #        pre_computed_path = True
+                #        #The path being feasible we can update the optimal cost of
+                #        node_by_node_costs[x] = cost_to_x
+                #    else:
+                #        del self.node_by_node_optimal_paths_to_go[x]
+                #except:
+                #    pass
 
                 if pre_computed_path == False: #Now we really scan all the points
 
@@ -282,8 +282,10 @@ class Graph():
                             #Get the optimal cost to go at nx
                             try:
                                 cost_of_y = node_by_node_costs[y]
+                                len_y = len(self.node_by_node_optimal_paths_to_go[y])
                             except:
                                 cost_of_y = 0. #This should mean that nx is the starting point
+                                len_y = 0
                                 assert(y == start)
 
                             #Now try to get the cost to go from y to x
@@ -296,7 +298,8 @@ class Graph():
                                 except:
                                     self.fmt_total_g[y] = {x: cost_to_go}
                             #Now we can find the total cost of going to x passing by y.
-                            cost_to_x_by_y = cost_of_y + cost_to_go #DP equation
+
+                            cost_to_x_by_y = (cost_of_y*len_y + cost_to_go)/(1+len_y) #DP equation
                             if cost_to_x_by_y <= min_cost:
                                 best_y = y #This is the temporary min
                                 min_cost = cost_to_x_by_y
@@ -307,14 +310,21 @@ class Graph():
                     # traverse obstacles, so we count on the small euclidean distance between neighbors to make this work.
 
                     if best_y != None:
-                        Middle_node = 0.5*(np.array(self.transform_from_grid(best_y))+np.array(self.transform_from_grid(x)))
-                        if environment._in_obst(Middle_node) == False: #If path is collision free (see above)
-                            V_open_new += [x]
-                            #embed()
-                            V_unvisited.remove(x)
-                            node_by_node_costs[x] = copy.deepcopy(min_cost)  # Update the dictionary of optimal costs
-                            self.node_by_node_optimal_paths_to_go[x] = copy.deepcopy(self.node_by_node_optimal_paths_to_go[best_y])
-                            self.node_by_node_optimal_paths_to_go[x] += [best_y]
+                        #Middle_node = 0.5*(np.array(self.transform_from_grid(best_y))+np.array(self.transform_from_grid(x)))
+                        #if environment._in_obst(Middle_node) == False: #If path is collision free (see above)
+                        #    V_open_new += [x]
+                        #    #embed()
+                        #    V_unvisited.remove(x)
+                        #    node_by_node_costs[x] = copy.deepcopy(min_cost)  # Update the dictionary of optimal costs
+                        #    self.node_by_node_optimal_paths_to_go[x] = copy.deepcopy(self.node_by_node_optimal_paths_to_go[best_y])
+                        #    self.node_by_node_optimal_paths_to_go[x] += [best_y]
+                        V_open_new += [x]
+                        V_unvisited.remove(x)
+                        node_by_node_costs[x] = copy.deepcopy(min_cost)  # Update the dictionary of optimal costs
+                        self.node_by_node_optimal_paths_to_go[x] = copy.deepcopy(
+                            self.node_by_node_optimal_paths_to_go[best_y])
+                        self.node_by_node_optimal_paths_to_go[x] += [best_y]
+
 
             # --------- Here ends both loops, we are now just in the while and have iterated on all X_near -------- #
 
@@ -336,6 +346,9 @@ class Graph():
                              # special cases of there being forbidden and explored edges in which case this is
                              # normal and interesting at the same time
 
+            if np.linalg.norm(np.subtract(z,goal_state)) <= 0.05:
+                terminated = True
+
             min_cost2 = np.inf #This has to change since we know V_open is not null
             for y2 in V_open:
                 if y2 == z:
@@ -352,6 +365,8 @@ class Graph():
                 print("Iteration ", iteration, " done. Explored state percentage: ")
                 print((1.-float(len(V_unvisited))/float(len(self.samples)))*100.)
                 #print(len(V_unvisited))
+
+
 
 
 
@@ -418,7 +433,7 @@ class Graph():
         for node in path_in_grid:
             node_off_grid = self.transform_from_grid(node)
             shortest_path_off_grid += [node_off_grid]
-        return shortest_path_off_grid
+        return shortest_path_off_grid, path_in_grid
 
     def delete_edge(self,node_start,node_end):
         node_start = self.transform_to_grid(node_start)
@@ -426,7 +441,7 @@ class Graph():
         del self.g[tuple(node_start)][tuple(node_end)]
         return
 
-    def delete_edge_t(self,node_start,node_end):
+    def delete_edge_in_grid(self,node_start,node_end):
         del self.g[tuple(node_start)][tuple(node_end)]
         return
 
@@ -439,9 +454,22 @@ class Graph():
             pass
         return
 
+    def delete_edge_fmt_total_in_grid(self,n1,n2):
+        try:
+            del self.fmt_total_g[tuple(n1)][tuple(n2)]
+        except:
+            pass
+        return
+
     def assign_to_graph(self,node_state,next_state,cost):
         node_state = self.transform_to_grid(node_state)
         next_state = self.transform_to_grid(next_state)
+        self.g[tuple(node_state)][tuple(next_state)] = cost
+        self.fmt_total_g[tuple(node_state)][tuple(next_state)] = cost
+        return
+
+
+    def assign_to_graph_in_grid(self,node_state,next_state,cost):
         self.g[tuple(node_state)][tuple(next_state)] = cost
         self.fmt_total_g[tuple(node_state)][tuple(next_state)] = cost
         return
@@ -458,9 +486,9 @@ class Graph():
 
             # ---------------------- PLOTTING MAP --------------------------------------- #
             ax = plt.gca()
-            for xo, yo, ro in zip(environment.obst_X, environment.obst_Y, environment.obst_R):
-                c = plt.Circle((xo, yo), ro, color='black', alpha=1.0)
-                ax.add_artist(c)
+            #for xo, yo, ro in zip(environment.obst_X, environment.obst_Y, environment.obst_R):
+            #    c = plt.Circle((xo, yo), ro, color='black', alpha=1.0)
+            #    ax.add_artist(c)
 
             r = plt.Rectangle((environment.xg_lower, environment.yg_lower), environment.xg_upper - environment.xg_lower, environment.yg_upper - environment.yg_lower,
                               color='g', alpha=0.3, hatch='/')
@@ -502,7 +530,7 @@ class Graph():
         return
 
 
-    def plot_graph_last(self,environment,iteration):
+    def plot_graph_last(self,environment,iteration,name="Test1"):
         """Creating as much plots as iterations numbered accordingly"""
         i = iteration
 
@@ -514,9 +542,9 @@ class Graph():
 
         # ---------------------- PLOTTING MAP --------------------------------------- #
         ax = plt.gca()
-        for xo, yo, ro in zip(environment.obst_X, environment.obst_Y, environment.obst_R):
-            c = plt.Circle((xo, yo), ro, color='black', alpha=1.0)
-            ax.add_artist(c)
+        #for xo, yo, ro in zip(environment.obst_X, environment.obst_Y, environment.obst_R):
+        #    c = plt.Circle((xo, yo), ro, color='black', alpha=1.0)
+        #    ax.add_artist(c)
 
         r = plt.Rectangle((environment.xg_lower, environment.yg_lower), environment.xg_upper - environment.xg_lower, environment.yg_upper - environment.yg_lower,
                           color='g', alpha=0.3, hatch='/')
@@ -525,7 +553,7 @@ class Graph():
 
         # ------------------ PLOTTING PATH HISTORY ---------------------------------- #
         list_of_xs = [state[0] for state in path_history]
-        list_of_ys = [state[2] for state in path_history]
+        list_of_ys = [state[1] for state in path_history]
 
         plt.plot(list_of_xs,list_of_ys,color="green")
         # --------------------------------------------------------------------------- #
@@ -535,7 +563,7 @@ class Graph():
         for explored_node in explored_nodes_history:
             explored_node = self.transform_from_grid(explored_node)
             explored_x = explored_node[0]
-            explored_y = explored_node[2]
+            explored_y = explored_node[1]
             plt.plot([explored_x], [explored_y], marker='o', linewidth=2, color='r', markersize=5)
         # --------------------------------------------------------------------------- #
 
@@ -543,24 +571,26 @@ class Graph():
         explored_node = explored_nodes_history[-1]
         explored_node = self.transform_from_grid(explored_node)
         explored_x = explored_node[0]
-        explored_y = explored_node[2]
+        explored_y = explored_node[1]
         plt.plot([explored_x], [explored_y], marker='o', linewidth=2, color='tab:purple', markersize=5)
         # --------------------------------------------------------------------------- #
 
         # ------------ PLOTTING NEXT POINT TO TRAIN ON IN BLUE ---------------------- #
         pcft_x = point_chosen_for_training[0]
-        pcft_y = point_chosen_for_training[2]
+        pcft_y = point_chosen_for_training[1]
         plt.plot([pcft_x], [pcft_y], marker='o', linewidth=2, color='blue', markersize=8)
         # --------------------------------------------------------------------------- #
 
         # Plotting training result
-        plt.text(.5,1,str(int(self.reward_history[i])),color="w")
+        plt.text(-2.,-2.,str(int(self.reward_history[i])),color="k")
 
         plt.xlim([environment.x_lower, environment.x_upper])
         plt.ylim([environment.y_lower, environment.y_upper])
 
         #Saves the figure
-        plt.savefig("plots/"+str(i)+".png")
+        if not os.path.exists("plots/"+name):
+            os.makedirs("plots/"+name)
+        plt.savefig("plots/"+name+"/"+str(i)+".png")
 
         #Clears the figure to create another one
         plt.clf()

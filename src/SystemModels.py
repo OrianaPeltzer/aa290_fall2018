@@ -101,9 +101,16 @@ class Double_Integrator(SimpleMIMO):
         #Returns high_state,low_state
         return np.array([xu,self.xd_upper_lim,yu,self.yd_upper_lim]),np.array([xl,self.xd_lower_lim,yl,self.yd_lower_lim])
 
-    def create_observation_limits(self,xu,xl,yu,yl):
+
+    def create_limit_states_xylim_obs(self,xu,xl,yu,yl,num_sensors):
+        #The upper and lower x and y limits come from the environment box.
+        #We create velocity limits that depend on our system.
+        #Returns high_state,low_state
+        return np.concatenate([np.array([xu,self.xd_upper_lim,yu,self.yd_upper_lim]),np.zeros(num_sensors)]),np.concatenate([np.array([xl,self.xd_lower_lim,yl,self.yd_lower_lim]),7*np.ones(num_sensors)])
+
+    def create_observation_limits(self,xu,xl,yu,yl,num_sensors):
         #Since y = Ix we just return state limits
-        return self.create_limit_states_xylim(xu,xl,yu,yl)
+        return self.create_limit_states_xylim_obs(xu,xl,yu,yl,num_sensors)
 
     def create_action_limits(self):
         #Returns high_action, low_action
@@ -145,3 +152,13 @@ class Double_Integrator(SimpleMIMO):
                     return False, np.inf #If the path is infeasible then it has an infinite expected cost
         return True, np.linalg.norm(x-node_end)
 
+class Double_Integrator_With_Noise(Double_Integrator):
+    """Same as previous double integrator only we put noise into the dynamics. Noise std defaults at 0.1*I4"""
+    def __init__(self,noise_std = 1.):
+        Double_Integrator.__init__(self)
+        self.noise_std = noise_std
+
+    def x_dot(self,x,u):
+        std = float(self.noise_std)
+        noise = std*np.random.standard_normal(size=self.state_dimensions)
+        return np.dot(self.A, x) + np.dot(self.B, u) + noise

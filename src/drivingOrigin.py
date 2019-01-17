@@ -13,6 +13,10 @@ from gym.utils import seeding
 import numpy as np
 import scipy
 from scipy.integrate import odeint
+#from scipy.spatial import distance
+from math import sin,cos
+import dubins
+from IPython import embed
 
 logger = logging.getLogger(__name__)
 
@@ -32,14 +36,15 @@ class DrivingOriginEnv(gym.Env):
         self.dt = 0.1
         self.accel_limit = 2.
         self.kappa_limit = .5
-        self.x_constraint = 3.#100.
-        self.y_constraint = 3.#100.
+        self.x_constraint = 2.#100.
+        self.y_constraint = 2.#100.
         self.speed_constraint = 2.#3.
         self.theta_constraint = np.pi
         self.curvature_constraint = 0.1
         self.velocity_reward_coeff = 0.0
         self.control_coeff = 1.
         self.min_cost = -200.
+        self.turning_radius = .1
 
         # What qualifies as a "success" such that we select it when expanding states?
         self.R_min = 0.5
@@ -67,12 +72,53 @@ class DrivingOriginEnv(gym.Env):
         self.action_space = spaces.Box(low=-high_actions,high=high_actions)
         self.state_space = spaces.Box(low=-high_state, high=high_state)
         self.observation_space = spaces.Box(low=-high_obsv, high=high_obsv)
+        self.state_space_limits_np = np.array([-high_state, high_state]).T
         self.seed(2015)
         self.viewer = None
 
         # Goal
-        goal_v = self.np_random.uniform(low=0.1, high=1.)
-        goal_theta = self.np_random.uniform(low=-np.pi, high=np.pi)
+        #goal_v = self.np_random.uniform(low=0.1, high=1.)
+        #goal_theta = self.np_random.uniform(low=-np.pi, high=np.pi)
+        goal_v = 0.15
+        goal_theta = 0.
+
+        # For plotting
+        self.xg_lower = -0.2
+        self.yg_lower = self.xg_lower
+        self.xg_upper = 0.2
+        self.yg_upper = self.xg_upper
+        self.x_lower = -self.x_constraint
+        self.x_higher = self.x_constraint
+        self.x_upper = self.x_higher
+        self.y_lower = -self.y_constraint
+        self.y_higher = self.y_constraint
+        self.y_upper = self.y_higher
+
+
+
+        # For LQR part:
+        self.B = np.zeros((5,2))
+        self.B[3,0] = 1
+        self.B[4,1] = 1
+        self.H = np.eye(5)
+        self.Q = 0.01*np.eye(5)
+        self.R = 0.01*np.eye(2)
+        self.Rm1 = np.linalg.inv(self.R)
+        self.M = np.dot(self.B, self.Rm1).dot(self.B.T)
+
+        self.state_dimensions = 5
+        self.control_input_dimensions = 2
+        self.system = self
+
+        self.start_state = np.zeros(5)
+        self.start_state[0] = 1.5
+        self.start_state[1] = 1.5
+        self.start_state[2] = -np.pi
+        #self.start_state[:3] = self.state_space.sample()[:3]
+        self.start_state[3] = 0.01  # not controllable at v=0
+        print("Sampled a start state: ", self.start_state)
+
+
 
         # Setting a final state with zero curvature should be fine, this is
         # only used for sampling "nearby" states anyways. Any value could
@@ -80,6 +126,8 @@ class DrivingOriginEnv(gym.Env):
         self.goal_state = np.array([0., 0., goal_theta, goal_v, 0.])
         
     def set_disturbance(self, disturbance_str):
+        disturbance_str = 'nonzero_control_noise'
+
         self.use_control_noise = False 
         self.use_nonzero_control_noise = False
         self.use_oversteer = False
@@ -99,6 +147,7 @@ class DrivingOriginEnv(gym.Env):
             self.use_additive_velocity_noise = True
             self.velocity_noise_source = np.random.RandomState(2015)
 
+
         assert sum([self.use_control_noise, self.use_nonzero_control_noise, self.use_oversteer, self.use_additive_velocity_noise]) == 1
 
     def seed(self, seed=None):
@@ -114,6 +163,12 @@ class DrivingOriginEnv(gym.Env):
     def _get_obs(self, state):
         x,y,th,v,kap = state
         return np.array([x,y,np.cos(th),np.sin(th),v,kap])
+
+    def _in_obst(self, state):
+        return False
+
+    def _in_goal(self, state):
+        return np.linalg.norm(np.array(state)-np.array(self.goal_state)) <= 0.05
 
     def step(self, action):
         old_state = self.state
@@ -132,6 +187,9 @@ class DrivingOriginEnv(gym.Env):
         integrand = lambda x,t: self.x_dot(old_state, action)
         x_tp1 = odeint(integrand, old_state, t)
 
+        #Here finding quadratic control cost
+        self.control_cost = 0.01*np.array(self.state).T.dot(self.Q).dot(np.array(self.state)) + 0.01*np.array(action).T.dot(self.R).dot(np.array(action))
+
         self.state = x_tp1[-1,:]
         if self.use_additive_velocity_noise:
             self.state[3] -= added_velocity
@@ -140,9 +198,11 @@ class DrivingOriginEnv(gym.Env):
         # Be close to the goal and have the desired final velocity.
         new_x, new_y, new_theta, new_v = self.state[:4]
         signed_delta_angle = np.arctan2(np.sin(new_theta - self.goal_state[2]), np.cos(new_theta - self.goal_state[2]))
-        done = ((np.sqrt(new_x**2 + new_y**2) <= self.goal_pos_threshold) 
-                and (np.abs(new_v - self.goal_state[3]) <= self.goal_vel_threshold) 
+        done = ((np.sqrt(new_x**2 + new_y**2) <= self.goal_pos_threshold)
+                and (np.abs(new_v - self.goal_state[3]) <= self.goal_vel_threshold)
                 and (np.abs(signed_delta_angle) <= self.goal_theta_threshold))
+
+        #done = self._in_goal(self.state)
 
         # calculate reward; for now, just using euclidean reward
         # old_x, old_y, old_theta, old_v = old_state[:4]
@@ -150,16 +210,87 @@ class DrivingOriginEnv(gym.Env):
         # reward = -(old_x**2 + old_y**2 
         #            + self.control_coeff*(uv**2 + uk**2) 
         #            + self.velocity_reward_coeff*old_v**2) # negative because we maximize
-        
-        reward = 1.0 if done else 0.0
+
+        goal_bonus = 1000.0 if done else 0.0
+        reward = goal_bonus
+        #reward = -self.control_cost + goal_bonus
         # reward = 0.0 if done else 1.0/self.min_cost
 
         return self._get_obs(self.state), reward, done, {}
 
+    def linear_A_around(self,node):
+        v0 = node[3]
+        th0 = node[2]
+        A = np.zeros((5,5))
+        A[0,2] = -v0*sin(th0)
+        A[0,3] = cos(th0)
+        A[1,2] = v0*cos(th0)
+        A[1,3] = sin(th0)
+        A[2,4] = 1.
+        return A
+
+    def solve_optimal_control_cost(self,node_start,node_end,time_horizon=2.):
+        n1 = tuple(node_start[:3])
+        n2 = tuple(node_end[:3])
+        step_size = 0.05
+        M = 10000
+
+        vect_theta1 = np.array([cos(node_start[2]), sin(node_start[2])])
+        a1a2 = np.array(np.subtract(n2,n1))[:2]
+
+        if np.linalg.norm(a1a2) > 0.01:
+            alignment_cost = 1 - np.dot(a1a2,vect_theta1)/np.linalg.norm(a1a2)
+            theta_cost = np.abs(n1[2] - n2[2])/np.linalg.norm(a1a2)
+        else:
+            alignment_cost = M
+            theta_cost = M
+
+        #turning_rad = 1./self.curvature_constraint
+        turning_rad = self.turning_radius
+        path = dubins.shortest_path(n1,n2,turning_rad)
+        confs,_ = path.sample_many(step_size)
+        #path_length = 0
+        #for k in range(len(confs)-1):
+        #    p1 = np.array((confs[k][0],confs[k][1]))
+        #    p2 = np.array((confs[k+1][0],confs[k+1][1]))
+        #    path_length += np.linalg.norm(p2-p1)
+        try:
+            confmat = np.array(confs)
+            confdiffs = confmat[1:,:-1]-confmat[:-1,:-1]
+        except:
+            return 0
+        return np.sum(np.linalg.norm(confdiffs,axis=1))**2 + 500.*alignment_cost**2 + 500.*theta_cost**2
+        #return path_length
+
+
+    def solve_optimal_control_cost_old(self,node_start,node_end,time_horizon=2.):
+        K = self.H
+        delta_T = 0.01
+        A = self.linear_A_around(node_start)
+        #print("Finding optimal LQR controller")
+        for i in np.mgrid[delta_T:time_horizon:delta_T]:
+            K_dot = -self.Q + K.dot(self.M).dot(K.T) - np.dot(K,A) - A.T.dot(K)
+            K = K - delta_T*K_dot
+
+            if np.linalg.norm(K_dot) < 0.05:
+                break
+        self.K_j = K #This is P (psd), found as solution to finite horizon Riccati equation, verifying that the optimal cost is xT*P*x
+        #print("Solution to Riccati equation: P=")
+        #print(self.K_j)
+        assert np.all(np.linalg.eigvals(self.K_j) >= 0)
+            #print("P is Positive Semi Definite - OK")
+        #else:
+            #print("P is not positive semi definite")
+        self.K = -self.Rm1.dot(self.B.T).dot(K)
+        return 0.5*(node_start-node_end).T.dot(self.K_j).dot(node_start-node_end)
+
+
     def reset(self):
-        self.state = np.zeros(5)
-        self.state[:3] = self.state_space.sample()[:3]
-        self.state[3] = 0.001 # not controllable at v=0
+        #self.state = np.zeros(5)
+        #self.state[:3] = self.state_space.sample()[:3]
+        #self.state[3] = 0.001 # not controllable at v=0
+        self.state = self.start_state
+        self.control_cost = 0
         
         return self._get_obs(self.state)
 
